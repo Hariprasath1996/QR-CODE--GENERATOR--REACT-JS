@@ -2,10 +2,21 @@ import { useState } from "react";
 
 const QrCode = () => {
     const [img, setImg] = useState("")
-    const[loading,setLoading ]=useState(false)
+    const [loading, setLoading] = useState(false)
+    const[qrData,serQrData]=useState("")
+    const[size,setSize]=useState()
 
-    function generateQr() {
-        setImg("img.jpg")
+    async function generateQr() {
+        setLoading(true)
+        try {
+            const url = `https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${qrData}`
+            setImg(url)
+
+        } catch (error) {
+            console.error("Error generating QR code", error)
+        } finally {
+            setLoading(false)
+        }
     }
 
     return (
@@ -13,12 +24,12 @@ const QrCode = () => {
             <div className="container">
                 <h1 className="header">QR CODE GENERATOR</h1>
                 <div className="Qr-container">
-                {loading && <p >please wait... </p>}
-                    {img && <img className={img} style={{ width: 250 }} src="img.jpg" alt="img" />}
+                    {loading && <p >please wait... </p>}
+                    {img && <img className={img} src={img} alt="img" />}
                     <label htmlFor="dataInput" className="input-label">Data For Qr Code : </label>
-                    <input placeholder="Enter Qr-data" type="text" id="dataInput" />
+                    <input value={qrData} onChange={(e)=>serQrData(e.target.value)} placeholder="Enter Qr-data" type="text" id="dataInput" />
                     <label htmlFor="sizeInput" className="input-label">Image Size (e.g.,150):</label>
-                    <input placeholder="Enter size of  Qr-data" type="text" id="sizeInput" />
+                    <input value={size} onChange={(e)=>setSize(e.target.value)} placeholder="Enter size of  Qr-data" type="text" id="sizeInput" />
                     <div className="QR-Buttons">
                         <button onClick={generateQr} className="Generate-btn">Generate QR Code</button>
                         <button className="Download-btn">Download QR Code</button>
