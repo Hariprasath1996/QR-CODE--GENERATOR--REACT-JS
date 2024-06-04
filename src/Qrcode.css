@@ -42,13 +42,13 @@
 }
 
 input {
-    width: 60%;
+    width: 50%;
     padding:10px 20px;
     border: 1px solid  dodgerblue;
 }
 
 label {
-    width: 60%;
+    width: 50%;
     padding: 5px 20px;
     color:  dodgerblue;
 }
