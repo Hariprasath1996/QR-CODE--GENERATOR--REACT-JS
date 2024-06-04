@@ -3,7 +3,7 @@ const QrCode = () => {
         <>
         <div className="container">
             <div>
-                <img src="" alt="" />
+                <img src="img.jpg" alt="" />
                 <label htmlFor="dataInput" className="input-label">Data For Qr Code</label>
                 <input type="text" id="dataInput" />
                 <label htmlFor="sizeInput" className="input-label">Image Size (e.g.,150):</label>
