@@ -43,48 +43,55 @@
 
 input {
     width: 50%;
-    padding:10px 20px;
-    border: 1px solid  dodgerblue;
+    padding: 10px 20px;
+    border: 1px solid dodgerblue;
 }
 
 label {
     width: 50%;
     padding: 5px 20px;
-    color:  dodgerblue;
+    color: dodgerblue;
 }
-.QR-Buttons{
+
+.QR-Buttons {
     padding: 10px;
     display: flex;
     flex-direction: row;
     gap: 50px;
 
 }
-button{
+
+button {
     padding: 10px 20px;
     border: none;
     border-radius: 2px;
     color: white;
 }
-.Generate-btn{
+
+.Generate-btn {
     background-color: dodgerblue;
     cursor: pointer;
 }
-.Generate-btn:hover{
+
+.Generate-btn:hover {
     background-color: rgb(6, 121, 236);
 }
 
-.Generate-btn:disabled{
+.Generate-btn:disabled {
     background-color: #bdc3c7;
     cursor: not-allowed;
 }
-.Download-btn{
+
+.Download-btn {
     background-color: rgb(88, 209, 40);
     cursor: pointer;
 }
-.Download-btn:hover{
+
+.Download-btn:hover {
     background-color: rgb(76, 250, 8);
 }
-.footer{
+
+.footer {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     position: absolute;
     bottom: 150px;
@@ -92,8 +99,9 @@ button{
     font-weight: 600;
     padding: 5px 15px;
 }
-span{
-    
+
+span {
+
     font-style: italic;
     color: blueviolet;
 }
